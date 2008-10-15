@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<areas>
+	<area val="001" group="04">
+	</area>
+	<area val="002" group="04">
+	</area>
+	<area val="003" group="02">
+	</area>
+	<area val="004" group="06">
+	</area>
+	<area val="005" group="06">
+	</area>
+	<area val="006" group="06">
+	</area>
+	<area val="007" group="06">
+	</area>
+	<area val="008" group="90">
+	</area>
+	<area val="009" group="88">
+	</area>
+	<area val="010" group="90">
+	</area>
+	<area val="011" group="90">
+	</area>
+	<area val="012" group="90">
+	</area>
+	<area val="013" group="88">
+	</area>
+	<area val="014" group="88">
+	</area>
+	<area val="015" group="88">
+	</area>
+	<area val="016" group="88">
+	</area>
+	<area val="017" group="88">
+	</area>
+	<area val="018" group="88">
+	</area>
+	<area val="019" group="88">
+	</area>
+	<area val="020" group="88">
+	</area>
+	<area val="021" group="88">
+	</area>
+	<area val="022" group="88">
+	</area>
+	<area val="023" group="88">
+	</area>
+	<area val="024" group="88">
+	</area>
+	<area val="025" group="88">
+	</area>
+	<area val="026" group="88">
+	</area>
+	<area val="027" group="88">
+	</area>
+	<area val="028" group="88">
+	</area>
+	<area val="029" group="88">
+	</area>
+	<area val="030" group="88">
+	</area>
+	<area val="031" group="88">
+	</area>
+	<area val="032" group="88">
+	</area>
+	<area val="033" group="88">
+	</area>
+	<area val="034" group="88">
+	</area>
+	<area val="035" group="72">
+	</area>
+	<area val="036" group="72">
+	</area>
+	<area val="037" group="70">
+	</area>
+	<area val="038" group="70">
+	</area>
+	<area val="039" group="70">
+	</area>
+	<area val="040" group="11">
+	</area>
+	<area val="041" group="08">
+	</area>
+	<area val="042" group="08">
+	</area>
+	<area val="043" group="08">
+	</area>
+	<area val="044" group="08">
+	</area>
+	<area val="045" group="08">
+	</area>
+	<area val="046" group="08">
+	</area>
+	<area val="047" group="08">
+	</area>
+	<area val="048" group="08">
+	</area>
+	<area val="049" group="08">
+	</area>
+	<area val="050" group="96">
+	</area>
+	<area val="051" group="96">
+	</area>
+	<area val="052" group="96">
+	</area>
+	<area val="053" group="96">
+	</area>
+	<area val="054" group="96">
+	</area>
+	<area val="055" group="96">
+	</area>
+	<area val="056" group="96">
+	</area>
+	<area val="057" group="96">
+	</area>
+	<area val="058" group="96">
+	</area>
+	<area val="059" group="96">
+	</area>
+	<area val="060" group="96">
+	</area>
+	<area val="061" group="96">
+	</area>
+	<area val="062" group="94">
+	</area>
+	<area val="063" group="94">
+	</area>
+	<area val="064" group="94">
+	</area>
+	<area val="065" group="94">
+	</area>
+	<area val="066" group="94">
+	</area>
+	<area val="067" group="94">
+	</area>
+	<area val="068" group="94">
+	</area>
+	<area val="069" group="94">
+	</area>
+	<area val="070" group="94">
+	</area>
+	<area val="071" group="94">
+	</area>
+	<area val="072" group="94">
+	</area>
+	<area val="073" group="94">
+	</area>
+	<area val="074" group="94">
+	</area>
+	<area val="075" group="94">
+	</area>
+	<area val="076" group="94">
+	</area>
+	<area val="077" group="94">
+	</area>
+	<area val="078" group="94">
+	</area>
+	<area val="079" group="94">
+	</area>
+	<area val="080" group="94">
+	</area>
+	<area val="081" group="94">
+	</area>
+	<area val="082" group="94">
+	</area>
+	<area val="083" group="94">
+	</area>
+	<area val="084" group="94">
+	</area>
+	<area val="085" group="94">
+	</area>
+	<area val="086" group="94">
+	</area>
+	<area val="087" group="94">
+	</area>
+	<area val="088" group="94">
+	</area>
+	<area val="089" group="94">
+	</area>
+	<area val="090" group="94">
+	</area>
+	<area val="091" group="94">
+	</area>
+	<area val="092" group="94">
+	</area>
+	<area val="093" group="94">
+	</area>
+	<area val="094" group="94">
+	</area>
+	<area val="095" group="94">
+	</area>
+	<area val="096" group="94">
+	</area>
+	<area val="097" group="94">
+	</area>
+	<area val="098" group="94">
+	</area>
+	<area val="099" group="94">
+	</area>
+	<area val="100" group="94">
+	</area>
+	<area val="101" group="94">
+	</area>
+	<area val="102" group="94">
+	</area>
+	<area val="103" group="94">
+	</area>
+	<area val="104" group="94">
+	</area>
+	<area val="105" group="94">
+	</area>
+	<area val="106" group="94">
+	</area>
+	<area val="107" group="94">
+	</area>
+	<area val="108" group="94">
+	</area>
+	<area val="109" group="94">
+	</area>
+	<area val="110" group="94">
+	</area>
+	<area val="111" group="94">
+	</area>
+	<area val="112" group="94">
+	</area>
+	<area val="113" group="94">
+	</area>
+	<area val="114" group="94">
+	</area>
+	<area val="115" group="94">
+	</area>
+	<area val="116" group="94">
+	</area>
+	<area val="117" group="94">
+	</area>
+	<area val="118" group="94">
+	</area>
+	<area val="119" group="94">
+	</area>
+	<area val="120" group="94">
+	</area>
+	<area val="121" group="94">
+	</area>
+	<area val="122" group="94">
+	</area>
+	<area val="123" group="94">
+	</area>
+	<area val="124" group="94">
+	</area>
+	<area val="125" group="94">
+	</area>
+	<area val="126" group="94">
+	</area>
+	<area val="127" group="94">
+	</area>
+	<area val="128" group="94">
+	</area>
+	<area val="129" group="94">
+	</area>
+	<area val="130" group="94">
+	</area>
+	<area val="131" group="94">
+	</area>
+	<area val="132" group="94">
+	</area>
+	<area val="133" group="94">
+	</area>
+	<area val="134" group="94">
+	</area>
+	<area val="135" group="17">
+	</area>
+	<area val="136" group="17">
+	</area>
+	<area val="137" group="17">
+	</area>
+	<area val="138" group="17">
+	</area>
+	<area val="139" group="17">
+	</area>
+	<area val="140" group="17">
+	</area>
+	<area val="141" group="17">
+	</area>
+	<area val="142" group="17">
+	</area>
+	<area val="143" group="17">
+	</area>
+	<area val="144" group="17">
+	</area>
+	<area val="145" group="15">
+	</area>
+	<area val="146" group="15">
+	</area>
+	<area val="147" group="15">
+	</area>
+	<area val="148" group="15">
+	</area>
+	<area val="149" group="15">
+	</area>
+	<area val="150" group="15">
+	</area>
+	<area val="151" group="15">
+	</area>
+	<area val="152" group="15">
+	</area>
+	<area val="153" group="15">
+	</area>
+	<area val="154" group="15">
+	</area>
+	<area val="155" group="15">
+	</area>
+	<area val="156" group="15">
+	</area>
+	<area val="157" group="15">
+	</area>
+	<area val="158" group="15">
+	</area>
+	<area val="159" group="82">
+	</area>
+	<area val="160" group="82">
+	</area>
+	<area val="161" group="82">
+	</area>
+	<area val="162" group="82">
+	</area>
+	<area val="163" group="82">
+	</area>
+	<area val="164" group="82">
+	</area>
+	<area val="165" group="82">
+	</area>
+	<area val="166" group="82">
+	</area>
+	<area val="167" group="82">
+	</area>
+	<area val="168" group="82">
+	</area>
+	<area val="169" group="82">
+	</area>
+	<area val="170" group="82">
+	</area>
+	<area val="171" group="82">
+	</area>
+	<area val="172" group="82">
+	</area>
+	<area val="173" group="82">
+	</area>
+	<area val="174" group="82">
+	</area>
+	<area val="175" group="82">
+	</area>
+	<area val="176" group="82">
+	</area>
+	<area val="177" group="82">
+	</area>
+	<area val="178" group="82">
+	</area>
+	<area val="179" group="82">
+	</area>
+	<area val="180" group="82">
+	</area>
+	<area val="181" group="82">
+	</area>
+	<area val="182" group="82">
+	</area>
+	<area val="183" group="82">
+	</area>
+	<area val="184" group="82">
+	</area>
+	<area val="185" group="82">
+	</area>
+	<area val="186" group="82">
+	</area>
+	<area val="187" group="82">
+	</area>
+	<area val="188" group="82">
+	</area>
+	<area val="189" group="82">
+	</area>
+	<area val="190" group="82">
+	</area>
+	<area val="191" group="82">
+	</area>
+	<area val="192" group="82">
+	</area>
+	<area val="193" group="82">
+	</area>
+	<area val="194" group="82">
+	</area>
+	<area val="195" group="82">
+	</area>
+	<area val="196" group="82">
+	</area>
+	<area val="197" group="82">
+	</area>
+	<area val="198" group="82">
+	</area>
+	<area val="199" group="82">
+	</area>
+	<area val="200" group="82">
+	</area>
+	<area val="201" group="82">
+	</area>
+	<area val="202" group="82">
+	</area>
+	<area val="203" group="82">
+	</area>
+	<area val="204" group="82">
+	</area>
+	<area val="205" group="82">
+	</area>
+	<area val="206" group="82">
+	</area>
+	<area val="207" group="82">
+	</area>
+	<area val="208" group="82">
+	</area>
+	<area val="209" group="82">
+	</area>
+	<area val="210" group="80">
+	</area>
+	<area val="211" group="80">
+	</area>
+	<area val="212" group="75">
+	</area>
+	<area val="213" group="75">
+	</area>
+	<area val="214" group="75">
+	</area>
+	<area val="215" group="75">
+	</area>
+	<area val="216" group="75">
+	</area>
+	<area val="217" group="75">
+	</area>
+	<area val="218" group="73">
+	</area>
+	<area val="219" group="73">
+	</area>
+	<area val="220" group="73">
+	</area>
+	<area val="221" group="04">
+	</area>
+	<area val="222" group="02">
+	</area>
+	<area val="223" group="99">
+	</area>
+	<area val="224" group="99">
+	</area>
+	<area val="225" group="99">
+	</area>
+	<area val="226" group="99">
+	</area>
+	<area val="227" group="99">
+	</area>
+	<area val="228" group="99">
+	</area>
+	<area val="229" group="99">
+	</area>
+	<area val="230" group="99">
+	</area>
+	<area val="231" group="99">
+	</area>
+	<area val="232" group="53">
+	</area>
+	<area val="233" group="53">
+	</area>
+	<area val="234" group="51">
+	</area>
+	<area val="235" group="51">
+	</area>
+	<area val="236" group="51">
+	</area>
+	<area val="237" group="99">
+	</area>
+	<area val="238" group="99">
+	</area>
+	<area val="239" group="99">
+	</area>
+	<area val="240" group="99">
+	</area>
+	<area val="241" group="99">
+	</area>
+	<area val="242" group="99">
+	</area>
+	<area val="243" group="99">
+	</area>
+	<area val="244" group="99">
+	</area>
+	<area val="245" group="99">
+	</area>
+	<area val="246" group="99">
+	</area>
+	<area val="247" group="99">
+	</area>
+	<area val="248" group="99">
+	</area>
+	<area val="249" group="99">
+	</area>
+	<area val="250" group="99">
+	</area>
+	<area val="251" group="99">
+	</area>
+	<area val="252" group="99">
+	</area>
+	<area val="253" group="99">
+	</area>
+	<area val="254" group="99">
+	</area>
+	<area val="255" group="99">
+	</area>
+	<area val="256" group="99">
+	</area>
+	<area val="257" group="99">
+	</area>
+	<area val="258" group="99">
+	</area>
+	<area val="259" group="99">
+	</area>
+	<area val="260" group="99">
+	</area>
+	<area val="261" group="99">
+	</area>
+	<area val="262" group="99">
+	</area>
+	<area val="263" group="99">
+	</area>
+	<area val="264" group="99">
+	</area>
+	<area val="265" group="99">
+	</area>
+	<area val="266" group="99">
+	</area>
+	<area val="267" group="99">
+	</area>
+	<area val="268" group="11">
+	</area>
+	<area val="269" group="11">
+	</area>
+	<area val="270" group="11">
+	</area>
+	<area val="271" group="11">
+	</area>
+	<area val="272" group="11">
+	</area>
+	<area val="273" group="11">
+	</area>
+	<area val="274" group="11">
+	</area>
+	<area val="275" group="11">
+	</area>
+	<area val="276" group="11">
+	</area>
+	<area val="277" group="11">
+	</area>
+	<area val="278" group="11">
+	</area>
+	<area val="279" group="11">
+	</area>
+	<area val="280" group="11">
+	</area>
+	<area val="281" group="11">
+	</area>
+	<area val="282" group="11">
+	</area>
+	<area val="283" group="11">
+	</area>
+	<area val="284" group="11">
+	</area>
+	<area val="285" group="11">
+	</area>
+	<area val="286" group="11">
+	</area>
+	<area val="287" group="11">
+	</area>
+	<area val="288" group="11">
+	</area>
+	<area val="289" group="11">
+	</area>
+	<area val="290" group="11">
+	</area>
+	<area val="291" group="11">
+	</area>
+	<area val="292" group="11">
+	</area>
+	<area val="293" group="11">
+	</area>
+	<area val="294" group="11">
+	</area>
+	<area val="295" group="11">
+	</area>
+	<area val="296" group="11">
+	</area>
+	<area val="297" group="11">
+	</area>
+	<area val="298" group="08">
+	</area>
+	<area val="299" group="08">
+	</area>
+	<area val="300" group="08">
+	</area>
+	<area val="301" group="08">
+	</area>
+	<area val="302" group="08">
+	</area>
+	<area val="303" group="31">
+	</area>
+	<area val="304" group="31">
+	</area>
+	<area val="305" group="29">
+	</area>
+	<area val="306" group="29">
+	</area>
+	<area val="307" group="29">
+	</area>
+	<area val="308" group="29">
+	</area>
+	<area val="309" group="29">
+	</area>
+	<area val="310" group="29">
+	</area>
+	<area val="311" group="29">
+	</area>
+	<area val="312" group="29">
+	</area>
+	<area val="313" group="29">
+	</area>
+	<area val="314" group="29">
+	</area>
+	<area val="315" group="29">
+	</area>
+	<area val="316" group="29">
+	</area>
+	<area val="317" group="29">
+	</area>
+	<area val="318" group="06">
+	</area>
+	<area val="319" group="06">
+	</area>
+	<area val="320" group="06">
+	</area>
+	<area val="321" group="04">
+	</area>
+	<area val="322" group="04">
+	</area>
+	<area val="323" group="04">
+	</area>
+	<area val="324" group="04">
+	</area>
+	<area val="325" group="04">
+	</area>
+	<area val="326" group="04">
+	</area>
+	<area val="327" group="04">
+	</area>
+	<area val="328" group="04">
+	</area>
+	<area val="329" group="04">
+	</area>
+	<area val="330" group="04">
+	</area>
+	<area val="331" group="04">
+	</area>
+	<area val="332" group="04">
+	</area>
+	<area val="333" group="04">
+	</area>
+	<area val="334" group="04">
+	</area>
+	<area val="335" group="04">
+	</area>
+	<area val="336" group="04">
+	</area>
+	<area val="337" group="04">
+	</area>
+	<area val="338" group="04">
+	</area>
+	<area val="339" group="04">
+	</area>
+	<area val="340" group="04">
+	</area>
+	<area val="341" group="04">
+	</area>
+	<area val="342" group="04">
+	</area>
+	<area val="343" group="04">
+	</area>
+	<area val="344" group="04">
+	</area>
+	<area val="345" group="04">
+	</area>
+	<area val="346" group="04">
+	</area>
+	<area val="347" group="04">
+	</area>
+	<area val="348" group="04">
+	</area>
+	<area val="349" group="04">
+	</area>
+	<area val="350" group="04">
+	</area>
+	<area val="351" group="04">
+	</area>
+	<area val="352" group="04">
+	</area>
+	<area val="353" group="04">
+	</area>
+	<area val="354" group="04">
+	</area>
+	<area val="355" group="04">
+	</area>
+	<area val="356" group="04">
+	</area>
+	<area val="357" group="04">
+	</area>
+	<area val="358" group="04">
+	</area>
+	<area val="359" group="04">
+	</area>
+	<area val="360" group="04">
+	</area>
+	<area val="361" group="04">
+	</area>
+	<area val="362" group="33">
+	</area>
+	<area val="363" group="33">
+	</area>
+	<area val="364" group="33">
+	</area>
+	<area val="365" group="33">
+	</area>
+	<area val="366" group="33">
+	</area>
+	<area val="367" group="33">
+	</area>
+	<area val="368" group="33">
+	</area>
+	<area val="369" group="33">
+	</area>
+	<area val="370" group="33">
+	</area>
+	<area val="371" group="31">
+	</area>
+	<area val="372" group="31">
+	</area>
+	<area val="373" group="31">
+	</area>
+	<area val="374" group="31">
+	</area>
+	<area val="375" group="31">
+	</area>
+	<area val="376" group="31">
+	</area>
+	<area val="377" group="31">
+	</area>
+	<area val="378" group="31">
+	</area>
+	<area val="379" group="31">
+	</area>
+	<area val="380" group="31">
+	</area>
+	<area val="381" group="31">
+	</area>
+	<area val="382" group="31">
+	</area>
+	<area val="383" group="31">
+	</area>
+	<area val="384" group="31">
+	</area>
+	<area val="385" group="31">
+	</area>
+	<area val="386" group="31">
+	</area>
+	<area val="387" group="27">
+	</area>
+	<area val="388" group="27">
+	</area>
+	<area val="389" group="27">
+	</area>
+	<area val="390" group="27">
+	</area>
+	<area val="391" group="27">
+	</area>
+	<area val="392" group="27">
+	</area>
+	<area val="393" group="27">
+	</area>
+	<area val="394" group="27">
+	</area>
+	<area val="395" group="27">
+	</area>
+	<area val="396" group="25">
+	</area>
+	<area val="397" group="25">
+	</area>
+	<area val="398" group="25">
+	</area>
+	<area val="399" group="25">
+	</area>
+	<area val="400" group="65">
+	</area>
+	<area val="401" group="65">
+	</area>
+	<area val="402" group="65">
+	</area>
+	<area val="403" group="65">
+	</area>
+	<area val="404" group="65">
+	</area>
+	<area val="405" group="65">
+	</area>
+	<area val="406" group="63">
+	</area>
+	<area val="407" group="63">
+	</area>
+	<area val="408" group="99">
+	</area>
+	<area val="409" group="99">
+	</area>
+	<area val="410" group="99">
+	</area>
+	<area val="411" group="99">
+	</area>
+	<area val="412" group="99">
+	</area>
+	<area val="413" group="99">
+	</area>
+	<area val="414" group="99">
+	</area>
+	<area val="415" group="99">
+	</area>
+	<area val="416" group="59">
+	</area>
+	<area val="417" group="59">
+	</area>
+	<area val="418" group="59">
+	</area>
+	<area val="419" group="59">
+	</area>
+	<area val="420" group="59">
+	</area>
+	<area val="421" group="59">
+	</area>
+	<area val="422" group="59">
+	</area>
+	<area val="423" group="59">
+	</area>
+	<area val="424" group="59">
+	</area>
+	<area val="425" group="99">
+	</area>
+	<area val="426" group="99">
+	</area>
+	<area val="427" group="99">
+	</area>
+	<area val="428" group="97">
+	</area>
+	<area val="429" group="99">
+	</area>
+	<area val="430" group="99">
+	</area>
+	<area val="431" group="99">
+	</area>
+	<area val="432" group="99">
+	</area>
+	<area val="433" group="99">
+	</area>
+	<area val="434" group="99">
+	</area>
+	<area val="435" group="99">
+	</area>
+	<area val="436" group="99">
+	</area>
+	<area val="437" group="99">
+	</area>
+	<area val="438" group="99">
+	</area>
+	<area val="439" group="99">
+	</area>
+	<area val="440" group="21">
+	</area>
+	<area val="441" group="21">
+	</area>
+	<area val="442" group="21">
+	</area>
+	<area val="443" group="21">
+	</area>
+	<area val="444" group="21">
+	</area>
+	<area val="445" group="21">
+	</area>
+	<area val="446" group="21">
+	</area>
+	<area val="447" group="21">
+	</area>
+	<area val="448" group="19">
+	</area>
+	<area val="449" group="99">
+	</area>
+	<area val="450" group="99">
+	</area>
+	<area val="451" group="99">
+	</area>
+	<area val="452" group="99">
+	</area>
+	<area val="453" group="99">
+	</area>
+	<area val="454" group="99">
+	</area>
+	<area val="455" group="99">
+	</area>
+	<area val="456" group="99">
+	</area>
+	<area val="457" group="99">
+	</area>
+	<area val="458" group="99">
+	</area>
+	<area val="459" group="99">
+	</area>
+	<area val="460" group="99">
+	</area>
+	<area val="461" group="99">
+	</area>
+	<area val="462" group="99">
+	</area>
+	<area val="463" group="99">
+	</area>
+	<area val="464" group="99">
+	</area>
+	<area val="465" group="99">
+	</area>
+	<area val="466" group="99">
+	</area>
+	<area val="467" group="99">
+	</area>
+	<area val="468" group="49">
+	</area>
+	<area val="469" group="47">
+	</area>
+	<area val="470" group="47">
+	</area>
+	<area val="471" group="47">
+	</area>
+	<area val="472" group="47">
+	</area>
+	<area val="473" group="47">
+	</area>
+	<area val="474" group="47">
+	</area>
+	<area val="475" group="47">
+	</area>
+	<area val="476" group="47">
+	</area>
+	<area val="477" group="47">
+	</area>
+	<area val="478" group="37">
+	</area>
+	<area val="479" group="35">
+	</area>
+	<area val="480" group="35">
+	</area>
+	<area val="481" group="35">
+	</area>
+	<area val="482" group="35">
+	</area>
+	<area val="483" group="35">
+	</area>
+	<area val="484" group="35">
+	</area>
+	<area val="485" group="35">
+	</area>
+	<area val="486" group="23">
+	</area>
+	<area val="487" group="23">
+	</area>
+	<area val="488" group="23">
+	</area>
+	<area val="489" group="23">
+	</area>
+	<area val="490" group="23">
+	</area>
+	<area val="491" group="23">
+	</area>
+	<area val="492" group="23">
+	</area>
+	<area val="493" group="23">
+	</area>
+	<area val="494" group="23">
+	</area>
+	<area val="495" group="23">
+	</area>
+	<area val="496" group="23">
+	</area>
+	<area val="497" group="23">
+	</area>
+	<area val="498" group="23">
+	</area>
+	<area val="499" group="21">
+	</area>
+	<area val="500" group="21">
+	</area>
+	<area val="501" group="31">
+	</area>
+	<area val="502" group="31">
+	</area>
+	<area val="503" group="39">
+	</area>
+	<area val="504" group="37">
+	</area>
+	<area val="505" group="51">
+	</area>
+	<area val="506" group="49">
+	</area>
+	<area val="507" group="49">
+	</area>
+	<area val="508" group="49">
+	</area>
+	<area val="509" group="27">
+	</area>
+	<area val="510" group="25">
+	</area>
+	<area val="511" group="25">
+	</area>
+	<area val="512" group="25">
+	</area>
+	<area val="513" group="25">
+	</area>
+	<area val="514" group="25">
+	</area>
+	<area val="515" group="25">
+	</area>
+	<area val="516" group="43">
+	</area>
+	<area val="517" group="41">
+	</area>
+	<area val="518" group="75">
+	</area>
+	<area val="519" group="73">
+	</area>
+	<area val="520" group="51">
+	</area>
+	<area val="521" group="99">
+	</area>
+	<area val="522" group="99">
+	</area>
+	<area val="523" group="99">
+	</area>
+	<area val="524" group="99">
+	</area>
+	<area val="525" group="99">
+	</area>
+	<area val="526" group="99">
+	</area>
+	<area val="527" group="99">
+	</area>
+	<area val="528" group="99">
+	</area>
+	<area val="529" group="99">
+	</area>
+	<area val="530" group="99">
+	</area>
+	<area val="531" group="59">
+	</area>
+	<area val="532" group="59">
+	</area>
+	<area val="533" group="59">
+	</area>
+	<area val="534" group="59">
+	</area>
+	<area val="535" group="57">
+	</area>
+	<area val="536" group="57">
+	</area>
+	<area val="537" group="57">
+	</area>
+	<area val="538" group="57">
+	</area>
+	<area val="539" group="57">
+	</area>
+	<area val="540" group="71">
+	</area>
+	<area val="541" group="71">
+	</area>
+	<area val="542" group="71">
+	</area>
+	<area val="543" group="69">
+	</area>
+	<area val="544" group="69">
+	</area>
+	<area val="545" group="99">
+	</area>
+	<area val="546" group="99">
+	</area>
+	<area val="547" group="99">
+	</area>
+	<area val="548" group="99">
+	</area>
+	<area val="549" group="99">
+	</area>
+	<area val="550" group="99">
+	</area>
+	<area val="551" group="99">
+	</area>
+	<area val="552" group="99">
+	</area>
+	<area val="553" group="99">
+	</area>
+	<area val="554" group="99">
+	</area>
+	<area val="555" group="99">
+	</area>
+	<area val="556" group="99">
+	</area>
+	<area val="557" group="99">
+	</area>
+	<area val="558" group="99">
+	</area>
+	<area val="559" group="99">
+	</area>
+	<area val="560" group="99">
+	</area>
+	<area val="561" group="99">
+	</area>
+	<area val="562" group="99">
+	</area>
+	<area val="563" group="99">
+	</area>
+	<area val="564" group="99">
+	</area>
+	<area val="565" group="99">
+	</area>
+	<area val="566" group="99">
+	</area>
+	<area val="567" group="99">
+	</area>
+	<area val="568" group="99">
+	</area>
+	<area val="569" group="99">
+	</area>
+	<area val="570" group="99">
+	</area>
+	<area val="571" group="99">
+	</area>
+	<area val="572" group="99">
+	</area>
+	<area val="573" group="99">
+	</area>
+	<area val="574" group="45">
+	</area>
+	<area val="575" group="99">
+	</area>
+	<area val="576" group="99">
+	</area>
+	<area val="577" group="41">
+	</area>
+	<area val="578" group="41">
+	</area>
+	<area val="579" group="41">
+	</area>
+	<area val="580" group="37">
+	</area>
+	<area val="581" group="99">
+	</area>
+	<area val="582" group="99">
+	</area>
+	<area val="583" group="99">
+	</area>
+	<area val="584" group="99">
+	</area>
+	<area val="585" group="99">
+	</area>
+	<area val="586" group="59">
+	</area>
+	<area val="587" group="97">
+	</area>
+	<area val="589" group="99">
+	</area>
+	<area val="590" group="99">
+	</area>
+	<area val="591" group="99">
+	</area>
+	<area val="592" group="99">
+	</area>
+	<area val="593" group="99">
+	</area>
+	<area val="594" group="99">
+	</area>
+	<area val="595" group="99">
+	</area>
+	<area val="596" group="80">
+	</area>
+	<area val="597" group="80">
+	</area>
+	<area val="598" group="80">
+	</area>
+	<area val="599" group="80">
+	</area>
+	<area val="600" group="99">
+	</area>
+	<area val="601" group="99">
+	</area>
+	<area val="602" group="57">
+	</area>
+	<area val="603" group="57">
+	</area>
+	<area val="604" group="57">
+	</area>
+	<area val="605" group="57">
+	</area>
+	<area val="606" group="57">
+	</area>
+	<area val="607" group="57">
+	</area>
+	<area val="608" group="57">
+	</area>
+	<area val="609" group="57">
+	</area>
+	<area val="610" group="57">
+	</area>
+	<area val="611" group="57">
+	</area>
+	<area val="612" group="57">
+	</area>
+	<area val="613" group="57">
+	</area>
+	<area val="614" group="57">
+	</area>
+	<area val="615" group="57">
+	</area>
+	<area val="616" group="55">
+	</area>
+	<area val="617" group="55">
+	</area>
+	<area val="618" group="55">
+	</area>
+	<area val="619" group="55">
+	</area>
+	<area val="620" group="55">
+	</area>
+	<area val="621" group="55">
+	</area>
+	<area val="622" group="55">
+	</area>
+	<area val="623" group="55">
+	</area>
+	<area val="624" group="55">
+	</area>
+	<area val="625" group="55">
+	</area>
+	<area val="626" group="55">
+	</area>
+	<area val="627" group="04">
+	</area>
+	<area val="628" group="04">
+	</area>
+	<area val="629" group="04">
+	</area>
+	<area val="630" group="02">
+	</area>
+	<area val="631" group="02">
+	</area>
+	<area val="632" group="02">
+	</area>
+	<area val="633" group="02">
+	</area>
+	<area val="634" group="02">
+	</area>
+	<area val="635" group="02">
+	</area>
+	<area val="636" group="02">
+	</area>
+	<area val="637" group="02">
+	</area>
+	<area val="638" group="02">
+	</area>
+	<area val="639" group="02">
+	</area>
+	<area val="640" group="02">
+	</area>
+	<area val="641" group="02">
+	</area>
+	<area val="642" group="02">
+	</area>
+	<area val="643" group="02">
+	</area>
+	<area val="644" group="02">
+	</area>
+	<area val="645" group="02">
+	</area>
+	<area val="646" group="88">
+	</area>
+	<area val="647" group="86">
+	</area>
+	<area val="648" group="40">
+	</area>
+	<area val="649" group="40">
+	</area>
+	<area val="650" group="40">
+	</area>
+	<area val="651" group="40">
+	</area>
+	<area val="652" group="38">
+	</area>
+	<area val="653" group="38">
+	</area>
+	<area val="654" group="22">
+	</area>
+	<area val="655" group="22">
+	</area>
+	<area val="656" group="22">
+	</area>
+	<area val="657" group="22">
+	</area>
+	<area val="658" group="22">
+	</area>
+	<area val="659" group="12">
+	</area>
+	<area val="660" group="12">
+	</area>
+	<area val="661" group="12">
+	</area>
+	<area val="662" group="12">
+	</area>
+	<area val="663" group="10">
+	</area>
+	<area val="664" group="10">
+	</area>
+	<area val="665" group="10">
+	</area>
+	<area val="667" group="30">
+	</area>
+	<area val="668" group="30">
+	</area>
+	<area val="669" group="30">
+	</area>
+	<area val="670" group="30">
+	</area>
+	<area val="671" group="28">
+	</area>
+	<area val="672" group="28">
+	</area>
+	<area val="673" group="28">
+	</area>
+	<area val="674" group="28">
+	</area>
+	<area val="675" group="28">
+	</area>
+	<area val="676" group="10">
+	</area>
+	<area val="677" group="10">
+	</area>
+	<area val="678" group="10">
+	</area>
+	<area val="679" group="10">
+	</area>
+	<area val="680" group="76">
+	</area>
+	<area val="681" group="10">
+	</area>
+	<area val="682" group="10">
+	</area>
+	<area val="683" group="10">
+	</area>
+	<area val="684" group="09">
+	</area>
+	<area val="685" group="09">
+	</area>
+	<area val="686" group="09">
+	</area>
+	<area val="687" group="09">
+	</area>
+	<area val="688" group="09">
+	</area>
+	<area val="689" group="09">
+	</area>
+	<area val="690" group="09">
+	</area>
+	<area val="691" group="05">
+	</area>
+	<area val="692" group="03">
+	</area>
+	<area val="693" group="03">
+	</area>
+	<area val="694" group="03">
+	</area>
+	<area val="695" group="03">
+	</area>
+	<area val="696" group="03">
+	</area>
+	<area val="697" group="03">
+	</area>
+	<area val="698" group="03">
+	</area>
+	<area val="699" group="03">
+	</area>
+	<area val="700" group="18">
+	</area>
+	<area val="701" group="18">
+	</area>
+	<area val="702" group="18">
+	</area>
+	<area val="703" group="18">
+	</area>
+	<area val="704" group="18">
+	</area>
+	<area val="705" group="18">
+	</area>
+	<area val="706" group="18">
+	</area>
+	<area val="707" group="18">
+	</area>
+	<area val="708" group="18">
+	</area>
+	<area val="709" group="18">
+	</area>
+	<area val="710" group="18">
+	</area>
+	<area val="711" group="18">
+	</area>
+	<area val="712" group="18">
+	</area>
+	<area val="713" group="18">
+	</area>
+	<area val="714" group="18">
+	</area>
+	<area val="715" group="18">
+	</area>
+	<area val="716" group="18">
+	</area>
+	<area val="717" group="18">
+	</area>
+	<area val="718" group="18">
+	</area>
+	<area val="719" group="18">
+	</area>
+	<area val="720" group="18">
+	</area>
+	<area val="721" group="18">
+	</area>
+	<area val="722" group="18">
+	</area>
+	<area val="723" group="18">
+	</area>
+	<area val="724" group="28">
+	</area>
+	<area val="725" group="18">
+	</area>
+	<area val="726" group="18">
+	</area>
+	<area val="727" group="10">
+	</area>
+	<area val="728" group="14">
+	</area>
+	<area val="729" group="07">
+	</area>
+	<area val="730" group="07">
+	</area>
+	<area val="731" group="05">
+	</area>
+	<area val="732" group="05">
+	</area>
+	<area val="733" group="05">
+	</area>
+	<area val="750" group="05">
+	</area>
+	<area val="751" group="05">
+	</area>
+	<area val="756" group="01">
+	</area>
+	<area val="757" group="01">
+	</area>
+	<area val="758" group="01">
+	</area>
+	<area val="759" group="01">
+	</area>
+	<area val="760" group="01">
+	</area>
+	<area val="761" group="01">
+	</area>
+	<area val="762" group="01">
+	</area>
+	<area val="763" group="01">
+	</area>
+	<area val="764" group="64">
+	</area>
+	<area val="765" group="64">
+	</area>
+	<area val="766" group="50">
+	</area>
+	<area val="767" group="50">
+	</area>
+	<area val="768" group="50">
+	</area>
+	<area val="769" group="48">
+	</area>
+	<area val="770" group="48">
+	</area>
+	<area val="771" group="48">
+	</area>
+	<area val="772" group="48">
+	</area>
+</areas>

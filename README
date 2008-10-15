@@ -1,0 +1,71 @@
+Spider Engine is the file-scanning core of UNIX Spider.  
+
+It's intended to simple be the regex scan/file processing engine of 
+various CLI and GUI Spiders that never got written.  Under Solaris/Linux 
+that was supposed to by a Gnome Spider.  Under OSX, it is the current 
+OSX Spider beta.
+
+Compiling Engine requires:
+
+	- OpenSSL (hash functions and crypto)
+	- libmagic (file type identification)
+	- libzzip (ZIP archive handling)
+	- libbz (bzip2 handling)
+	- libz (gzip handling)
+	- libexpat (reading the SSN area/max group XML)
+	- PCRE (regexes)
+
+PCRE, OpenSSL, libexpat are mandatory.  The rest are optional, though if 
+you leave out libmagic, skiptypes goes from being a type fragment like "Office"
+or "JPEG" to being a file extension, just like Windows.
+
+Leaving out the various archive handlers causes Engine to process those as a
+bit stream.  I.e., you won't see anything.
+
+Engine will look for a spider.conf in one of three places:
+	
+	~/.spider/spider.conf
+	/root/.spider/spider.conf
+	/etc/spider/spider.conf
+
+It'll parse that config file then start running.  You won't get any outward
+indication of what it's doing until it finishes.  
+
+Config items are named to correspond to values used by Windows Spider 2.x.  
+An example config is provided.
+
+Items that are bitmasked, like logattributes, are the base10 integer sum of
+the config items in config.h:
+
+logattributes 8135
+
+means log path, hash, hits, score, regex, etc.
+
+In use, we generally hand-edit (all this stuff was intended to be managed by 
+a GUI someday ...) spider.conf to set the start directory, then kick off 
+engine.
+
+If you want to add regexes, add them to the bottom of spider.conf:
+
+regex \d{9}
+regex \d{3}-\d{3}-\d{3}
+
+...etc...
+
+I'd intended to include a syntax for validators, but none is defined for 
+custom regexes.  The reason for this is PCRE is going to require an 
+end-of-regex callout: "(?C)" which allows Engine to grab the match and do
+something with it.  I figured most users wouldn't get it, Engine could insert
+it, but I also needed a way to indicate which validator to use.
+
+Be aware: just like its Windows counterpart, Engine will trample access times
+as it goes.  If you're using this for incident response, mount the filesystem 
+read-only.
+
+Future Directions:
+
+- some way to manage the config file other than vi
+- libpst integration to read Outlook mailboxes
+- something that reads PDF files
+- smarter custom-regex handling
+- all manner of things to bring it in line with Windows Spider.
