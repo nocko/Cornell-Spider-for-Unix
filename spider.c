@@ -50,7 +50,7 @@
 #include <expat.h>
 
 // our config file; we'll internalize this when we go under Glade
-#include "config.h"
+#include "spider_config.h"
 
 #define BUF_SIZE	65535
 #define MATCH_WIDTH	128
