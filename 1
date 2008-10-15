@@ -3,10 +3,10 @@ usessn 1
 usevmcd 1
 useamex 0
 encrypt 0
-logsyslog 0
+logsyslog 1
 logfac local0
 csvlog 1
-appendlog 0
+appendlog 1
 logattributes 8135
 logpath /tmp/spider.log
 log2file 1
@@ -16,7 +16,7 @@ recurse 1
 followsymlinks 0
 preserveatime 0
 logfooter Footer: %M %d %y %T on host %N runtime: %R secs
-maxgroups /etc/spider/SSNlin.xml
+maxgroups /usr/local/etc/SSNlin.xml
 password Password
 skiptype RPM
 skiptype JPEG

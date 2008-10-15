@@ -32,19 +32,23 @@
 #include <openssl/evp.h>
 #include <openssl/md5.h>
 
+// autotools config file for portability
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif /* HAVE_CONFIG_H */
 
 // archive handlers
-#ifdef USE_ZLIB
+#ifdef HAVE_LIBZ
 #include <zlib.h>
-#endif
+#endif /* HAVE_LIBZ */
 
-#ifdef USE_BZIP
+#ifdef HAVE_LIBBZ2
 #include <bzlib.h>
-#endif
+#endif /* HAVE_LIBBZ2 */
 
-#ifdef USE_ZIP
+#ifdef HAVE_LIBZZIP
 #include <zzip/zzip.h>
-#endif
+#endif /* HAVE_LIBZZIP */
 
 // XML parser
 #include <expat.h>
@@ -55,7 +59,7 @@
 #define BUF_SIZE	65535
 #define MATCH_WIDTH	128
 
-#ifdef USE_MAGIC
+#ifdef HAVE_LIBMAGIC
 #include <magic.h>
 int magic_flags = MAGIC_NONE;
 magic_t magic;
@@ -139,7 +143,7 @@ int main(int argc, char **argv) {
 	}
 
 	read_config();
-#ifdef USE_MAGIC
+#ifdef HAVE_LIBMAGIC
 	load_magic();
 #endif
 	load_regexes();
@@ -234,7 +238,7 @@ int main(int argc, char **argv) {
 	exit(0);
 }
 
-#ifdef USE_MAGIC
+#ifdef HAVE_LIBMAGIC
 void load_magic(void) {
 	
 	magic = magic_open(magic_flags);
@@ -366,7 +370,7 @@ void scan(char *pPath) {
 	int ret = 0;
 	struct skippaths *sp;
 	int status = 0;
-#ifdef USE_MAGIC
+#ifdef HAVE_LIBMAGIC
 	const char *type;
 	struct skiptypes *p;
 #else
@@ -407,7 +411,7 @@ void scan(char *pPath) {
 	// .zip gets delegated to the unzip library
 	//
 	// bzero(extension, PATH_MAX);
-#ifndef USE_MAGIC
+#ifndef HAVE_LIBMAGIC
 	get_ext(pPath, extension);
 
 	if (!strcasecmp(extension, "tgz") || !strcasecmp(extension, "gz")) {
@@ -618,7 +622,7 @@ void acquire_paths(char *startpath, int rec) {
 	struct skippaths *p;
 	int status = 0;
 	int follow = 0;
-#ifdef USE_STAT
+#ifdef HAVE_SYS_STAT
 	struct stat sta;
 	struct stat sta2;
 #endif
@@ -664,7 +668,7 @@ void acquire_paths(char *startpath, int rec) {
 		snprintf(tmp_path, PATH_MAX, "%s/%s",
 				startpath,
 				dent -> d_name);
-#ifndef USE_STAT
+#ifndef HAVE_SYS_STAT
 		if (dent -> d_type == DT_REG) {
 #else
 		if (lstat(tmp_path, &sta) < 0) {
@@ -693,7 +697,7 @@ void acquire_paths(char *startpath, int rec) {
 #endif
 			scan(tmp_path);
 			filecount++;
-#ifdef USE_STAT
+#ifdef HAVE_SYS_STAT
 			if (PreserveAtime) {
 				if (verbose) {
 					fprintf(stderr, "Resetting atime on: %s\n", tmp_path);
@@ -710,7 +714,7 @@ void acquire_paths(char *startpath, int rec) {
 				}
 			}
 #endif
-#ifndef USE_STAT
+#ifndef HAVE_SYS_STAT
 		} else if (dent -> d_type == DT_DIR) {
 #else
 		} else if (((sta2.st_mode & S_IFMT) == S_IFDIR) && follow) {
@@ -728,7 +732,7 @@ void acquire_paths(char *startpath, int rec) {
 			// other file types
 			// do we follow symlinks?
 		}
-#ifdef USE_STAT
+#ifdef HAVE_SYS_STAT
 //		free(&sta);
 #endif
 	}
@@ -815,6 +819,7 @@ void read_config(void) {
 	// /etc/spider/spider.conf
 	struct passwd *pwd;
 	char path_buf[PATH_MAX];
+  char path_buf2[PATH_MAX];
 	FILE *fp;
 	char config_buf[4096];
 	char s1[4096];
@@ -836,6 +841,7 @@ void read_config(void) {
 	cskipp = startskippath;
 
 	snprintf(path_buf, PATH_MAX, "%s/.spider/%s", pwd -> pw_dir, CONFIG_NAME);
+  snprintf(path_buf2, PATH_MAX, "%s/etc/spider.conf", PREFIX);
 
 	bzero(pwd, sizeof(struct passwd));
 	bzero(LogFooter, sizeof(LogFooter));
@@ -851,14 +857,14 @@ void read_config(void) {
 			fprintf(stderr, "Trying: %s\n", path_buf);
 		}
 		fp = fopen(path_buf, "r");
-	}
+	} 
 
 	if (fp == NULL) {
 		// different path
 		fp = fopen("/root/.spider/spider.conf", "r");
 		if (fp == NULL) {
 			// one last try
-			fp = fopen("/opt/common/spider-1.0/etc/spider/spider.conf", "r");
+			fp = fopen(path_buf2, "r");
 			if (fp == NULL) {
 				fprintf(stderr, "No config file!\n");
 				exit(1);
@@ -1217,7 +1223,7 @@ void craft_csv_entry(char *csventry, char *pPath, char *regex, char *hit) {
 	if (LogAttributes & LOG_TYPE) {
 		// presupposes compilation with libmagic
 		//
-#ifndef USE_MAGIC
+#ifndef HAVE_LIBMAGIC
 		strncat(entry, "File,", 5);
 #else
 		// grab the magic type and stuff the first MAGIC_WIDTH characters 
@@ -1716,7 +1722,7 @@ void process_mbx(char *pPath) {
 }
 
 void process_zlib(char *pPath) {
-#ifdef USE_ZLIB
+#ifdef HAVE_LIBZ
 	gzFile gzfile;
 	char buf[BUF_SIZE];	
 	int nRead;
@@ -1756,7 +1762,7 @@ void process_zlib(char *pPath) {
 }
 
 void process_bzip2(char *pPath) {
-#ifdef USE_BZIP
+#ifdef HAVE_LIBBZ2
 	BZFILE *bzfile;
 	char buf[BUF_SIZE];	
 	int nRead;
@@ -1796,7 +1802,7 @@ void process_bzip2(char *pPath) {
 }
 
 void process_zip(char *pPath) {
-#ifdef USE_ZIP
+#ifdef HAVE_LIBZZIP
 	ZZIP_DIR *dir;
 	ZZIP_FILE *fp;
 	ZZIP_DIRENT dirent;
@@ -2407,7 +2413,7 @@ void view_log(char *logpath) {
 	// "data" is probably encrypted and we'll treat it as such
 	// ASCII-something is plaintext and we'll just display it
 	int encrypted = 0;
-#ifdef USE_MAGIC
+#ifdef HAVE_LIBMAGIC
 	const char *type;
 
 	type = magic_file(magic, logpath);

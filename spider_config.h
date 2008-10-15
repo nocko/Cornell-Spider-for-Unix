@@ -1,8 +1,6 @@
 #include <pcre.h>
 #include <regex.h>
 
-#define VERSION "Engine 1.0.1"
-
 #ifndef PATH_MAX
 #define PATH_MAX	1024
 #endif
