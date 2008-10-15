@@ -2,16 +2,13 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.61])
-AC_INIT([spider],[Engine 1.0.1],[nock@email.arizona.edu])
+AC_INIT([spider-engine],[1.1.0],[nock@email.arizona.edu])
 AM_INIT_AUTOMAKE([-Wall])
 AC_CONFIG_SRCDIR([spider.c])
 AC_CONFIG_HEADER([config.h])
 
 # Checks for programs.
 AC_PROG_CC
-
-
-
 
 # Checks for header files.
 AC_HEADER_DIRENT
@@ -36,7 +33,16 @@ AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_FUNC_STAT
 AC_FUNC_STRFTIME
-AC_CHECK_FUNCS([bzero ftruncate gethostname pow regcomp strcasecmp strerror strrchr strstr])
+AC_CHECK_FUNCS([bzero ftruncate gethostname pow regcomp strcasecmp strerror strrchr strstr flock])
+
+# See if the user wants to link statically
+AC_ARG_ENABLE(dynamic,
+    [AC_HELP_STRING([--enable-dynamic],[disable static linking of the the spider binary])])
+if test "$enable_dynamic" = "yes"; then
+  AC_SUBST([STATIC],[ ])
+else
+  AC_SUBST([STATIC],[-static])
+fi
 
 # Checks for libraries.
 AC_ARG_ENABLE(bzlib,
@@ -57,7 +63,6 @@ AC_CHECK_LIB([expat], [XML_ParserReset],[],[AC_MSG_ERROR([Cannot locate required
 
 AC_CHECK_LIB([m], [exp],[],[AC_MSG_ERROR([Cannot locate required library: libm])])
 
-#AC_CHECK_LIB([magic], [main],,AC_MSG_WARN(Enhanced file typing disabled))
 AC_ARG_ENABLE(magic,
   [AC_HELP_STRING([--enable-magic],[enable enhanced file typing with libmagic])])
 if test "$enable_magic" = "yes"; then
@@ -72,7 +77,6 @@ AC_CHECK_LIB([pcre], [pcre_config],,AC_MSG_ERROR(Cannot locate required library:
 
 AC_CHECK_LIB([ssl], [main],,AC_MSG_ERROR(Cannot locate required library: ssl))
 
-#AC_CHECK_LIB([z], [main],,AC_MSG_WARN(Scanning deflated files disabled))
 AC_ARG_ENABLE(deflate,
   [AC_HELP_STRING([--enable-deflate],[enable scanning of deflated files])])
 if test "$enable_deflate" = "yes"; then
@@ -94,5 +98,6 @@ else
   AC_CHECK_HEADER([zzip.h],[],[AC_MSG_WARN([Cannot locate libzzip headers])])
 fi
 
+AC_PREFIX_DEFAULT([/opt/common/spider-1.0])
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

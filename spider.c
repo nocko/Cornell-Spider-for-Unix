@@ -841,7 +841,7 @@ void read_config(void) {
 	cskipp = startskippath;
 
 	snprintf(path_buf, PATH_MAX, "%s/.spider/%s", pwd -> pw_dir, CONFIG_NAME);
-  snprintf(path_buf2, PATH_MAX, "%s/etc/spider.conf", PREFIX);
+  snprintf(path_buf2, PATH_MAX, "%s/etc/spider/spider.conf", PREFIX);
 
 	bzero(pwd, sizeof(struct passwd));
 	bzero(LogFooter, sizeof(LogFooter));
@@ -1357,7 +1357,7 @@ void save_config(char *confpath) {
 		return;
 	}
 
-#ifndef SOLARIS
+#ifndef HAVE_FLOCK
 	if (flock(fileno(fp), LOCK_EX | LOCK_NB) < 0) {
 		fprintf(stderr, "unable to lock %s\n", confpath);
 		return;
@@ -1457,7 +1457,7 @@ void save_config(char *confpath) {
 
 
 	fflush(fp);
-#ifndef SOLARIS
+#ifndef HAVE_FLOCK
 	(void)flock(fileno(fp), LOCK_UN);
 #else
 	(void)lockf(fileno(fp), F_ULOCK, 0);

@@ -1,6 +1,8 @@
-AM_CFLAGS=-static -DPREFIX=\"@prefix@\"
+AM_CFLAGS=@STATIC@ -DPREFIX=\"@prefix@\" -finline-functions -mpreferred-stack-boundary=4 -D_FILE_OFFSET_BITS=64
 bin_PROGRAMS=spider
 spider_SOURCES=spider.c
-sysconf_DATA = spider.conf SSNlin.xml
+sysconf_DATA_noinst = spider.conf SSNlin.xml
 install-data-local:
-	sed -i -e 's,/etc/spider,@prefix@/etc,' @prefix@/etc/spider.conf
+	install -D spider.conf @prefix@/etc/spider/spider.conf
+	sed -i -e 's,/etc/spider,@prefix@/etc/spider,' @prefix@/etc/spider/spider.conf
+	install -D SSNlin.xml @prefix@/etc/spider/SSNlin.xml
