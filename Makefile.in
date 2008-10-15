@@ -159,8 +159,9 @@ target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CFLAGS = @STATIC@ -DPREFIX=\"@prefix@\" -finline-functions -mpreferred-stack-boundary=4 -D_FILE_OFFSET_BITS=64
-spider_SOURCES = spider.c
+spider_SOURCES = spider.c spider_config.h
 sysconf_DATA_noinst = spider.conf SSNlin.xml
+EXTRA_DIST = spider.conf SSNlin.xml
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
