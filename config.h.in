@@ -52,6 +52,9 @@
 /* Define to 1 if you have the `z' library (-lz). */
 #undef HAVE_LIBZ
 
+/* Define to 1 if you have the `zip' library (-lzip). */
+#undef HAVE_LIBZIP
+
 /* Define to 1 if you have the `zzip' library (-lzzip). */
 #undef HAVE_LIBZZIP
 

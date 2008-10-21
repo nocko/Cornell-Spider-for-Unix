@@ -50,6 +50,10 @@
 #include <zzip/zzip.h>
 #endif /* HAVE_LIBZZIP */
 
+#ifdef HAVE_LIBZIP
+#include <zip.h>
+#endif /* HAVE_LIBZIP */
+
 // XML parser
 #include <expat.h>
 
@@ -1843,8 +1847,42 @@ void process_zip(char *pPath) {
 	}
 
 	zzip_dir_close(dir);
-#endif
+#else
+#ifdef HAVE_LIBZIP
+  struct zip *za;
+  int err, ret = 0, nRead;
+  char errstr[1024],
+       buf[BUF_SIZE];
+  long depth;
+
+  if ((za = zip_open(pPath, 0, &err)) == NULL) {
+    return;
+  }
+
+while ((nRead = zip_fread(za, &buf, BUF_SIZE)) > 0) {
+  depth += nRead;
+  if (is_match(buf,nRead)) {
+    ret = 1;
+    if (!LogTotalMatches) {
+      send_match(hit,pPath);
+      zip_close(za);
+      return;
+    }
+  }
+  bzero(buf, sizeof(buf));
+  if ((ScanDepth != 0) && (depth >= (ScanDepth * 1024))) {
+    break;
+   }
+ }
+
+ if ((LogTotalMatches && TotalMatches) || ret) {
+   send_match(hit, pPath);
+ }
+ 
+ zip_close(za);
+#endif /* HAVE_LIBZIP */
 	return;
+#endif /* HAVE_ZZIP */
 }
 
 void sanitize_buf(char *buf) {

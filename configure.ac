@@ -42,6 +42,7 @@ if test "$enable_dynamic" = "yes"; then
   AC_SUBST([STATIC],[ ])
 else
   AC_SUBST([STATIC],[-static])
+  LDFLAGS="-static $LDFLAGS"
 fi
 
 # Checks for libraries.
@@ -63,16 +64,6 @@ AC_CHECK_LIB([expat], [XML_ParserReset],[],[AC_MSG_ERROR([Cannot locate required
 
 AC_CHECK_LIB([m], [exp],[],[AC_MSG_ERROR([Cannot locate required library: libm])])
 
-AC_ARG_ENABLE(magic,
-  [AC_HELP_STRING([--enable-magic],[enable enhanced file typing with libmagic])])
-if test "$enable_magic" = "yes"; then
-  AC_CHECK_LIB([magic], [magic_file],[],[AC_MSG_ERROR([Cannot locate libmagic])])
-  AC_CHECK_HEADER([magic.h],[],[AC_MSG_ERROR([Cannot locate libmagic headers; install file-devel?])])
-else
-  AC_CHECK_LIB([magic], [magic_file],[],[AC_MSG_WARN([Cannot locate libmagic; enhance file typing disabled])])
-  AC_CHECK_HEADER([magic.h],[],[AC_MSG_WARN([Cannot locate libmagic headers; install file-devel?])])
-fi
-
 AC_CHECK_LIB([pcre], [pcre_config],,AC_MSG_ERROR(Cannot locate required library: pcre))
 
 AC_CHECK_LIB([ssl], [main],,AC_MSG_ERROR(Cannot locate required library: ssl))
@@ -87,15 +78,36 @@ else
   AC_CHECK_HEADER([zlib.h],[],[AC_MSG_WARN([Cannot locate libz headers; install zlib-devel?])])
 fi
 
+AC_ARG_ENABLE(magic,
+  [AC_HELP_STRING([--enable-magic],[enable enhanced file typing with libmagic])])
+if test "$enable_magic" = "yes"; then
+  AC_CHECK_LIB([magic], [magic_file],[],[AC_MSG_ERROR([Cannot locate libmagic])])
+  AC_CHECK_HEADER([magic.h],[],[AC_MSG_ERROR([Cannot locate libmagic headers; install file-devel?])])
+else
+  AC_CHECK_LIB([magic], [magic_file],[],[AC_MSG_WARN([Cannot locate libmagic; enhance file typing disabled])])
+  AC_CHECK_HEADER([magic.h],[],[AC_MSG_WARN([Cannot locate libmagic headers; install file-devel?])])
+fi
+
+
 #AC_CHECK_LIB([zzip], [main],,AC_MSG_WARN(Scanning zip files disabled))
-AC_ARG_ENABLE(zip,
-  [AC_HELP_STRING([--enable-zip],[enable scanning of zipped files])])
-if test "$enable_zip" = "yes"; then
+AC_ARG_ENABLE(zzip,
+  [AC_HELP_STRING([--enable-zzip],[enable scanning of zipped files with libzzip])])
+if test "$enable_zzip" = "yes"; then
   AC_CHECK_LIB([zzip], [zzip_dir_open],[],[AC_MSG_ERROR([Cannot locate libzzip])])
-  AC_CHECK_HEADER([zzip.h],[],[AC_MSG_ERROR([Cannot locate libz headers])])
+  AC_CHECK_HEADER([zzip.h],[],[AC_MSG_ERROR([Cannot locate libzzip headers])])
 else
   AC_CHECK_LIB([zzip], [zzip_dir_open],[],[AC_MSG_WARN([Cannot locate zzip; Scanning zip files disabled])])
   AC_CHECK_HEADER([zzip.h],[],[AC_MSG_WARN([Cannot locate libzzip headers])])
+fi
+
+AC_ARG_ENABLE(zip,
+  [AC_HELP_STRING([--enable-zip],[enable scanning of zipped files with libzip (BETA)])])
+if test "$enable_zip" = "yes"; then
+  AC_CHECK_LIB([zip], [zip_open],[],[AC_MSG_ERROR([Cannot locate libzip])])
+  AC_CHECK_HEADER([zip.h],[],[AC_MSG_ERROR([Cannot locate libzip headers])])
+else
+  AC_CHECK_LIB([zip], [zip_open],[],[AC_MSG_WARN([Cannot locate zip; Scanning zip files disabled])])
+  AC_CHECK_HEADER([zip.h],[],[AC_MSG_WARN([Cannot locate libzip headers])])
 fi
 
 AC_PREFIX_DEFAULT([/opt/common/spider-1.0])
