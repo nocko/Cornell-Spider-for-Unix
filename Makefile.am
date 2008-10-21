@@ -1,4 +1,4 @@
-AM_CFLAGS=@STATIC@ -DPREFIX=\"@prefix@\" -finline-functions -mpreferred-stack-boundary=4 -D_FILE_OFFSET_BITS=64
+AM_CFLAGS=@STATIC@ -DPREFIX=\"@prefix@\" -finline-functions -D_FILE_OFFSET_BITS=64
 bin_PROGRAMS=spider
 spider_SOURCES=spider.c spider_config.h
 sysconf_DATA_noinst = spider.conf SSNlin.xml
