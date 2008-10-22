@@ -821,7 +821,7 @@ void read_config(void) {
 	// CUR_USER/.spider/spider.conf
 	// /root/.spider/spider.conf
 	// /etc/spider/spider.conf
-	struct passwd *pwd;
+  char *home;
 	char path_buf[PATH_MAX];
   char path_buf2[PATH_MAX];
 	FILE *fp;
@@ -838,16 +838,15 @@ void read_config(void) {
 	int first_skip = 1;
 	int first_skipp = 1;
 
-	pwd = getpwuid(getuid());
+	home = getenv("HOME");
 
 	cregp = startregp;
 	cskip = startskip;
 	cskipp = startskippath;
 
-	snprintf(path_buf, PATH_MAX, "%s/.spider/%s", pwd -> pw_dir, CONFIG_NAME);
+	snprintf(path_buf, PATH_MAX, "%s/.spider/%s", home, CONFIG_NAME);
   snprintf(path_buf2, PATH_MAX, "%s/etc/spider/spider.conf", PREFIX);
 
-	bzero(pwd, sizeof(struct passwd));
 	bzero(LogFooter, sizeof(LogFooter));
 	bzero(Password, sizeof(Password));
 
@@ -856,31 +855,48 @@ void read_config(void) {
 			fprintf(stderr, "Trying: %s\n", CONFIG_PATH);
 		}
 		fp = fopen(CONFIG_PATH, "r");
-	} else {
-		if (verbose) {
-			fprintf(stderr, "Trying: %s\n", path_buf);
-		}
-		fp = fopen(path_buf, "r");
 	} 
 
-	if (fp == NULL) {
-		// different path
+	if (verbose) {
+	  fprintf(stderr, "Trying: %s\n", path_buf);
+	}
+  // Try the $HOME/.spider/spider.conf
+	fp = fopen(path_buf, "r");
+
+	if (fp == NULL) 
+  {
+    if (verbose) 
+    {
+	    fprintf(stderr, "Trying: %s\n", "/root/.spider/spider.conf");
+	  }
 		fp = fopen("/root/.spider/spider.conf", "r");
-		if (fp == NULL) {
-			// one last try
+		if (fp == NULL) 
+    {
+      if (verbose) 
+      {
+			  fprintf(stderr, "Trying: %s\n", path_buf2);
+		  }
 			fp = fopen(path_buf2, "r");
-			if (fp == NULL) {
+			if (fp == NULL) 
+      {
 				fprintf(stderr, "No config file!\n");
 				exit(1);
 			} else {
-				snprintf(ConfPath, PATH_MAX, "%s", path_buf);
-			}
-		} else {
-			snprintf(ConfPath, PATH_MAX, "%s", path_buf);
+        snprintf(ConfPath, PATH_MAX, "%s", path_buf2);
+      }
+		} else 
+    {
+			snprintf(ConfPath, PATH_MAX, "%s", "/root/.spider/spider.conf");
 		}
-	} else {
+	} else 
+  {
 		snprintf(ConfPath, PATH_MAX, "%s", path_buf);
 	}
+  
+  if (verbose)
+  {
+    fprintf(stderr, "Using config from: %s\n", ConfPath);
+  }
 
 	// if we fall through to here, we're reading something
 	while (fgets(config_buf, 4096, fp) != NULL) {
@@ -1554,7 +1570,7 @@ void make_custom_log_path(void) {
 	struct tm *tm_gmt;
 	char foo[256];
 	time_t now;
-	struct passwd *pwd;
+  char *user;
 	// we'll walk through LogPath writing to CustomLogPath
 
 	// we'll take the same basic args as WinSpider:
@@ -1626,11 +1642,11 @@ void make_custom_log_path(void) {
 						break;
 					case 'u':
 						// username
-						pwd = getpwuid(getuid());
-						if (pwd == NULL) {
+            user = getenv("USER");
+						if (user == NULL) {
 							strncat(log_path, "NA", 2);
 						} else {
-							snprintf(foo, sizeof(foo), "%s", pwd -> pw_name);
+							snprintf(foo, sizeof(foo), "%s", user);
 							strncat(log_path, foo, strlen(foo));
 						}
 						break;
@@ -2072,7 +2088,7 @@ void write_footer(void) {
 	char *cp;
 	time_t now;
 	struct tm *tm_gmt;
-	struct passwd *pwd;
+  char *user;
 	struct logarray *p;
 
 	cp = &LogFooter[0];
@@ -2135,11 +2151,11 @@ void write_footer(void) {
 						break;
 					case 'u':
 						// username
-						pwd = getpwuid(getuid());
-						if (pwd == NULL) {
+            user = getenv("USER");
+						if (user == NULL) {
 							strncat(new_footer, "NA", 2);
 						} else {
-							snprintf(foo, sizeof(foo), "%s", pwd -> pw_name);
+							snprintf(foo, sizeof(foo), "%s", user);
 							strncat(new_footer, foo, strlen(foo));
 						}
 						break;
