@@ -626,7 +626,7 @@ void acquire_paths(char *startpath, int rec) {
 	struct skippaths *p;
 	int status = 0;
 	int follow = 0;
-#ifdef HAVE_SYS_STAT
+#ifdef HAVE_SYS_STAT_H
 	struct stat sta;
 	struct stat sta2;
 #endif
@@ -672,7 +672,7 @@ void acquire_paths(char *startpath, int rec) {
 		snprintf(tmp_path, PATH_MAX, "%s/%s",
 				startpath,
 				dent -> d_name);
-#ifndef HAVE_SYS_STAT
+#ifndef HAVE_SYS_STAT_H
 		if (dent -> d_type == DT_REG) {
 #else
 		if (lstat(tmp_path, &sta) < 0) {
@@ -701,7 +701,7 @@ void acquire_paths(char *startpath, int rec) {
 #endif
 			scan(tmp_path);
 			filecount++;
-#ifdef HAVE_SYS_STAT
+#ifdef HAVE_SYS_STAT_H
 			if (PreserveAtime) {
 				if (verbose) {
 					fprintf(stderr, "Resetting atime on: %s\n", tmp_path);
@@ -718,7 +718,7 @@ void acquire_paths(char *startpath, int rec) {
 				}
 			}
 #endif
-#ifndef HAVE_SYS_STAT
+#ifndef HAVE_SYS_STAT_H
 		} else if (dent -> d_type == DT_DIR) {
 #else
 		} else if (((sta2.st_mode & S_IFMT) == S_IFDIR) && follow) {
@@ -736,7 +736,7 @@ void acquire_paths(char *startpath, int rec) {
 			// other file types
 			// do we follow symlinks?
 		}
-#ifdef HAVE_SYS_STAT
+#ifdef HAVE_SYS_STAT_H
 //		free(&sta);
 #endif
 	}
