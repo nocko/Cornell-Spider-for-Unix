@@ -6,10 +6,14 @@ that was supposed to by a Gnome Spider.  Under OSX, it is the current
 OSX Spider beta.
 
 Building spider (the truncated version):
-  ./configure && make && make install
+  ./configure && make [&& make install]
 
-  The following dependencies will be automatically detected and the
-  optional libraries will be used if found.
+  Spider doesn't need to be installed. It will run fine from the builddir.
+  If you like it will be installed to the tree specified by the --prefix
+  arguement to ./configure (the default prefix is /usr/local).
+
+The following dependencies will be automatically detected and the
+optional libraries will be used if found.
 
 Compiling Engine requires:
 
@@ -23,10 +27,9 @@ Optional:
 	- libbz (bzip2 handling)
 	- libz (gzip handling)
 
-The rest are optional, though if you leave out libmagic, skiptypes goes 
-from being a type fragment like "Office" or "JPEG" to being a file 
-extension, just like Windows. (This is not true, yet... without libmagic,
-skiptypes shouldn't work SMN 10/20/08)
+If you leave out libmagic, skiptypes goes from being a type fragment like 
+"Office" or "JPEG" to being a file extension, just like Windows. (This is not
+true, yet... without libmagic, skiptypes shouldn't work SMN 10/20/08)
 
 Leaving out the various archive handlers causes Engine to process those as a
 bit stream.  I.e., you won't see anything.
@@ -34,7 +37,7 @@ bit stream.  I.e., you won't see anything.
 Engine will look for a spider.conf in one of three places:
 	
 	~/.spider/spider.conf
-	/root/.spider/spider.conf
+	$PWD/spider.conf
 	@PREFIX@/spider.conf (Where prefix is the --prefix arg to ./configure)
 
 It'll parse that config file then start running.  You won't get any outward

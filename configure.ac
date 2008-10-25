@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.61])
-AC_INIT([spider-engine],[1.1.0],[cuspider-l@list.cornell.edu])
+AC_INIT([spider-engine-git],[1.1.1],[nock@email.arizona.edu])
 AM_INIT_AUTOMAKE([-Wall])
 AC_CONFIG_SRCDIR([spider.c])
 AC_CONFIG_HEADER([config.h])
@@ -36,11 +36,9 @@ AC_FUNC_STRFTIME
 AC_CHECK_FUNCS([bzero ftruncate gethostname pow regcomp strcasecmp strerror strrchr strstr flock])
 
 # See if the user wants to link statically
-AC_ARG_ENABLE(dynamic,
-    [AC_HELP_STRING([--enable-dynamic],[disable static linking of the the spider binary])])
-if test "$enable_dynamic" = "yes"; then
-  AC_SUBST([STATIC],[ ])
-else
+AC_ARG_ENABLE(static,
+    [AC_HELP_STRING([--enable-static],[enable static linking of the the spider binary])])
+if test "$enable_static" = "yes"; then
   AC_SUBST([STATIC],[-static])
   LDFLAGS="-static $LDFLAGS"
 fi
@@ -110,6 +108,6 @@ else
   AC_CHECK_HEADER([zip.h],[],[AC_MSG_WARN([Cannot locate libzip headers])])
 fi
 
-AC_PREFIX_DEFAULT([/opt/common/spider-1.0])
+AC_PREFIX_DEFAULT([/usr/local])
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

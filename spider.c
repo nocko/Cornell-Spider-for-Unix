@@ -867,9 +867,9 @@ void read_config(void) {
   {
     if (verbose) 
     {
-	    fprintf(stderr, "Trying: %s\n", "/root/.spider/spider.conf");
+	    fprintf(stderr, "Trying: %s\n", "./spider.conf");
 	  }
-		fp = fopen("/root/.spider/spider.conf", "r");
+		fp = fopen("./spider.conf", "r");
 		if (fp == NULL) 
     {
       if (verbose) 
@@ -886,7 +886,7 @@ void read_config(void) {
       }
 		} else 
     {
-			snprintf(ConfPath, PATH_MAX, "%s", "/root/.spider/spider.conf");
+			snprintf(ConfPath, PATH_MAX, "%s", "./spider.conf");
 		}
 	} else 
   {
