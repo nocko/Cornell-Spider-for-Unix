@@ -41,6 +41,8 @@ AC_ARG_ENABLE(static,
 if test "$enable_static" = "yes"; then
   AC_SUBST([STATIC],[-static])
   LDFLAGS="-static $LDFLAGS"
+else
+  AC_SUBST([STATIC],[ ])
 fi
 
 # Checks for libraries.

@@ -6165,6 +6165,9 @@ if test "$enable_static" = "yes"; then
   STATIC=-static
 
   LDFLAGS="-static $LDFLAGS"
+else
+  STATIC=
+
 fi
 
 # Checks for libraries.
