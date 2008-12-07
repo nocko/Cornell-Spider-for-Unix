@@ -824,7 +824,7 @@ void read_config(void) {
   char *home;
 	char path_buf[PATH_MAX];
   char path_buf2[PATH_MAX];
-	FILE *fp;
+	FILE *fp = NULL;
 	char config_buf[4096];
 	char s1[4096];
 	char s2[4096];
@@ -845,7 +845,7 @@ void read_config(void) {
 	cskipp = startskippath;
 
 	snprintf(path_buf, PATH_MAX, "%s/.spider/%s", home, CONFIG_NAME);
-  snprintf(path_buf2, PATH_MAX, "%s/etc/spider/spider.conf", PREFIX);
+  	snprintf(path_buf2, PATH_MAX, "%s/etc/spider/spider.conf", PREFIX);
 
 	bzero(LogFooter, sizeof(LogFooter));
 	bzero(Password, sizeof(Password));
@@ -855,48 +855,42 @@ void read_config(void) {
 			fprintf(stderr, "Trying: %s\n", CONFIG_PATH);
 		}
 		fp = fopen(CONFIG_PATH, "r");
+		snprintf(ConfPath, PATH_MAX, "%s", CONFIG_PATH);
 	} 
 
-	if (verbose) {
-	  fprintf(stderr, "Trying: %s\n", path_buf);
-	}
-  // Try the $HOME/.spider/spider.conf
-	fp = fopen(path_buf, "r");
-
-	if (fp == NULL) 
-  {
-    if (verbose) 
-    {
-	    fprintf(stderr, "Trying: %s\n", "./spider.conf");
-	  }
-		fp = fopen("./spider.conf", "r");
-		if (fp == NULL) 
-    {
-      if (verbose) 
-      {
-			  fprintf(stderr, "Trying: %s\n", path_buf2);
-		  }
-			fp = fopen(path_buf2, "r");
-			if (fp == NULL) 
-      {
-				fprintf(stderr, "No config file!\n");
-				exit(1);
-			} else {
-        snprintf(ConfPath, PATH_MAX, "%s", path_buf2);
-      }
-		} else 
-    {
-			snprintf(ConfPath, PATH_MAX, "%s", "./spider.conf");
+	if (fp == NULL) {
+		if (verbose) {
+			fprintf(stderr, "Trying: %s\n", "./spider.conf");
 		}
-	} else 
-  {
+		fp = fopen("./spider.conf", "r");
+		snprintf(ConfPath, PATH_MAX, "%s", "./spider.conf");
+	}
+
+	if (fp == NULL) {
+		if (verbose) {
+	  		fprintf(stderr, "Trying: %s\n", path_buf);
+		}
+  		// Try the $HOME/.spider/spider.conf
+		fp = fopen(path_buf, "r");
 		snprintf(ConfPath, PATH_MAX, "%s", path_buf);
 	}
+
+	if (fp == NULL) {
+		if (verbose) {
+			  fprintf(stderr, "Trying: %s\n", path_buf2);
+		}
+		fp = fopen(path_buf2, "r");
+        	snprintf(ConfPath, PATH_MAX, "%s", path_buf2);
+	}
+
+	if (fp == NULL) {
+		fprintf(stderr, "No config file!\n");
+		exit(1);
+	} 
   
-  if (verbose)
-  {
-    fprintf(stderr, "Using config from: %s\n", ConfPath);
-  }
+ 	if (verbose) {
+		fprintf(stderr, "Using config from: %s\n", ConfPath);
+	}
 
 	// if we fall through to here, we're reading something
 	while (fgets(config_buf, 4096, fp) != NULL) {
@@ -1377,7 +1371,7 @@ void save_config(char *confpath) {
 		return;
 	}
 
-#ifndef HAVE_FLOCK
+#ifdef HAVE_FLOCK
 	if (flock(fileno(fp), LOCK_EX | LOCK_NB) < 0) {
 		fprintf(stderr, "unable to lock %s\n", confpath);
 		return;
@@ -1477,7 +1471,7 @@ void save_config(char *confpath) {
 
 
 	fflush(fp);
-#ifndef HAVE_FLOCK
+#ifdef HAVE_FLOCK
 	(void)flock(fileno(fp), LOCK_UN);
 #else
 	(void)lockf(fileno(fp), F_ULOCK, 0);
