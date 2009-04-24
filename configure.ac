@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.61])
-AC_INIT([spider-engine-git],[1.1.1],[nock@email.arizona.edu])
+AC_INIT([spider-engine],[1.1.1],[nock@email.arizona.edu])
 AM_INIT_AUTOMAKE([-Wall])
 AC_CONFIG_SRCDIR([spider.c])
 AC_CONFIG_HEADER([config.h])
