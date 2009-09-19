@@ -1,0 +1,162 @@
+commit 06d487f88bfa4feaadfebe0f8065a446ac3f7b3d
+Author: Shawn Nock <nock@nock.uits.arizona.edu>
+Date:   Fri Apr 24 14:45:51 2009 -0700
+
+    Added fixes for RPM packaging
+    
+    Updated SPEC file to be more useful and modified the autotools config to
+    allow for seemless installation into fake root (again for RPM building).
+    
+    Signed-off-by: Shawn Nock <nock@email.arizona.edu>
+
+commit 0669e49aa6be64e8a361cc4f23ecd0ef99d229b8
+Author: murphy <murphy@localhost.localdomain>
+Date:   Sat Dec 6 17:20:19 2008 -0700
+
+    Fixed reversed logic on HAVE_FLOCK and the broken config file handling. (-f option)
+
+commit eba0712183967328e6790082eae036f26df4fd19
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Fri Oct 24 22:06:31 2008 -0700
+
+    Added a spec file to create RPMs
+    
+    I need to keep track of this... why not put it here?
+
+commit e39e16fa4ddd260fc70c30349be47a7732bfce6a
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Fri Oct 24 21:37:46 2008 -0700
+
+    Clarification of automake directives
+    
+    We shouldn't shotgun everything to CFLAGS. This breaks out preprocessor,
+    compiler and linker flags to the right stages. It also clears the @STATIC@
+    autoconf substitution properly.
+
+commit aa8aab7de1c47d3c6e368c8723a9422b83afd7b2
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Fri Oct 24 21:27:15 2008 -0700
+
+    Allow spider to run from builddir and make dynamic linking the default
+    
+    There is really no reason for most users to install spider. I changed the
+    paths searched for the config. and the default spider.conf path for SSNlin.xml
+    to the $PWD. When spider is installed with make install sed replaces the path
+    to SSNlin.xml in the spider.conf installed in @PREFIX@. This is a heavily
+    requested feature here at the UA. I also made the default linking type dynamic
+    because the user who is compiling the software doesn't care that it's static
+    and static libs are rarely easy to come by in the zip,zzip -devel packages on
+    most distros. When I'll add the --enable-static flag to the spec file
+    (comming soon) so that we don't have to track deps using rpm.
+
+commit 7000c3084eca6cdc8a622ea829d32830c98e4a25
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Wed Oct 22 19:58:25 2008 -0700
+
+    Fixed miraculous coincidence with sys/stat.h on x86/Linux
+    
+    Did you know that x86/x86_64 Linux glibc header sys/stat.h defined
+    HAVE_SYS_STAT . I didn't, but I ran across a portability problem on
+    PPC/Linux and discovered that I fat-fingered the SYS_STAT ifdefs .
+    This also means that platforms that do not have sys/stat.h are
+    broken. Will track down as time allows.
+
+commit eaf56173522c2e6d9a58a81455f7557e2aefe161
+Author: Shawn Nock <nock@email.arizona.edu>
+Date:   Wed Oct 22 13:26:51 2008 -0700
+
+    Removed getpwuid() calls and clarified read_config()
+    
+    getpwuid() is problematic for portability and cannot be properly linked
+    statically, whic remains the default. I removed these calls in favor of
+    querying the environment for $HOME and $USER. This works well with sudo.
+    I also fixed the value of ConfPath broken by my previous commit to
+    respect the install prefix and spread out the nested if's as they were
+    giving me a headache.
+
+commit 7227d4755900fc636a2763a326c4d05c6ecac0a5
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Mon Oct 20 22:44:09 2008 -0700
+
+    Modified README for new build system
+    
+    A GNU autotools quick-start and I added a few notes about the hidden
+    things that some brave users may find useful.
+
+commit 1c979eda85a850e570ba97d0ed58859f7ad366e3
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Mon Oct 20 17:37:27 2008 -0700
+
+    Removed non-portable stack arg to gcc
+
+commit 327faba797a479d3a35a41adc8d3de8ea9d7f2de
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Mon Oct 20 17:33:42 2008 -0700
+
+    Initial libzip support
+
+commit fbca2fdd8d7b399885e7f98a5030b6f7e7f0bad8
+Author: Shawn Nock <nock@email.arizona.edu>
+Date:   Wed Oct 15 15:35:51 2008 -0700
+
+    Changed the spider.conf to reflect he current UA standard
+
+commit fa51cb4a3cd1740b73dfd6ec3f362e1b0a79a00e
+Author: Shawn Nock <nock@email.arizona.edu>
+Date:   Wed Oct 15 14:52:32 2008 -0700
+
+    Cleaning up a bunch of crud that doesn't need to be tracked any more...
+
+commit f9b5d50786b947614426a45a8621f71f1d9defa8
+Author: Shawn Nock <nock@email.arizona.edu>
+Date:   Wed Oct 15 13:52:44 2008 -0700
+
+    Hopefully the last autotools fixs for a while
+
+commit 9f97b3bbfe15a656d956ec27e944467aefbb7d9b
+Author: Shawn Nock <nock@email.arizona.edu>
+Date:   Wed Oct 15 13:51:00 2008 -0700
+
+    autoconf tweaks
+
+commit 624e26471c0249634d2ebdbaf9b8746e39a0a68f
+Author: Shawn Nock <nock@email.arizona.edu>
+Date:   Wed Oct 15 13:48:27 2008 -0700
+
+    Misc. fixups.
+
+commit 084363fe4eb96f26102e59abc203500b8b683ba0
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Wed Oct 15 10:11:17 2008 -0700
+
+    Updating autoconf macros
+
+commit 3c8d493b30c3ed481c85a128059925b59ab72c78
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Wed Oct 15 10:09:49 2008 -0700
+
+    Fleshing out local symlinks for repo
+
+commit f06e702ddca410b14f23d39194dddd1a15cf72c4
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Wed Oct 15 10:08:10 2008 -0700
+
+    Purging unused file
+
+commit 6db818470dcf0124d4efa4a4cc9a9620ae652bff
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Wed Oct 15 00:08:58 2008 -0700
+
+    Initial autotools port
+
+commit bd81967b0c87e32ee0c777625b12d161ef066b01
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Tue Oct 14 19:44:49 2008 -0700
+
+    Basic changes to rename things for autotools
+
+commit ce07f0bc1d4ce0a222a9a8c379b267d14c3f806c
+Author: Shawn Nock <nock@nock-apple.local>
+Date:   Tue Oct 14 19:24:21 2008 -0700
+
+    Inital commit.
