@@ -78,7 +78,6 @@ filesystem read-only.
 
 Future Directions:
 
-- some way to manage the config file other than vi
 - libpst integration to read Outlook mailboxes
 - something that reads PDF files
 - smarter custom-regex handling

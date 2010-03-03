@@ -1,3 +1,23 @@
+commit 832a60829ce9c79eda9bafb38719c3b5c101d911
+Author: Shawn Nock <sn253@georgetown.edu>
+Date:   Wed Mar 3 10:13:21 2010 -0500
+
+    Remove save_config()
+    
+    This function was unused and the locking semantics it was using were
+    unportable. I don't see a place for this feature, so I removed the function. If
+    this is reimplemented it should be with fcntl.
+    
+    Signed-off-by: Shawn Nock <sn253@georgetown.edu>
+
+commit dd4bbfebf9c6c39a308bf8f6de6f0e16962f731e
+Author: Shawn Nock <nock@email.arizona.edu>
+Date:   Fri Sep 18 17:35:53 2009 -0700
+
+    Recreated Changelog file
+    
+    Signed-off-by: Shawn Nock <nock@email.arizona.edu>
+
 commit 06d487f88bfa4feaadfebe0f8065a446ac3f7b3d
 Author: Shawn Nock <nock@nock.uits.arizona.edu>
 Date:   Fri Apr 24 14:45:51 2009 -0700
