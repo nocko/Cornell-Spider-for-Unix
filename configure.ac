@@ -33,7 +33,7 @@ AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_FUNC_STAT
 AC_FUNC_STRFTIME
-AC_CHECK_FUNCS([bzero ftruncate gethostname pow regcomp strcasecmp strerror strrchr strstr flock])
+AC_CHECK_FUNCS([bzero ftruncate gethostname pow regcomp strcasecmp strerror strrchr strstr])
 
 # See if the user wants to link statically
 AC_ARG_ENABLE(static,
