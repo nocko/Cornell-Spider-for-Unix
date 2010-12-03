@@ -1,3 +1,7 @@
 Shawn Nock <sn253@georgetown.edu>
-  -Autotools files
-  -Portability fixes to spider.c
+  - Autotools files
+  - Portability fixes
+  - gzip/bzip suport
+
+Brian Murphy <brian@xpleomedia.com>
+  - Solaris Portability Fixes

@@ -18,11 +18,11 @@ optional libraries will be used if found.
 Compiling Engine requires:
 
 	- OpenSSL (hash functions and crypto)
-	- libmagic (file type identification)
 	- libexpat (reading the SSN area/max group XML)
 	- PCRE (regexes)
 
 Optional:
+	- libmagic (file type identification)
 	- libzzip (ZIP archive handling)
 	- libbz (bzip2 handling)
 	- libz (gzip handling)
